@@ -5,3 +5,12 @@
     --desatured-blue: hsl(224, 23%, 55%);
     --dark-blue: hsl(223, 47%, 23%);
 }
+
+.title {
+    font-weight: 900;
+    color: var(--dark-blue);
+}
+
+p {
+    color: var(--desatured-blue);
+}
