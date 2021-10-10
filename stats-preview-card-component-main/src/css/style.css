@@ -1,0 +1,107 @@
+/* MOBILE VERSION */
+
+/* font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif; */
+
+.bg {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 85%;
+    height: 750px;
+    display: grid;
+    grid-template-areas: 
+    "image"
+    "description"
+    "emphasis";
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 10px;
+    background-color: var(--dark-desatured-blue);
+}
+
+.section-image {
+    grid-area: image; 
+    background-color: var(--soft-violet);
+    border-radius: 10px 10px 0 0;
+}
+
+.section-image .image {
+    height: 100%;
+    background-image: url(../images/image-header-mobile.jpg);
+    background-color: var(--soft-violet);
+    background-blend-mode: multiply;
+    background-size: cover;
+    opacity: 0.8;
+    border-radius: 10px 10px 0 0;
+}
+
+.section-description {
+    grid-area: description; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8%;
+}
+
+.section-description .title {
+    color: white;
+    font-size: 2.7rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.section-description .title span{
+    color: var(--soft-violet)
+}
+
+.section-description .paragraph {
+    font-family: 'inter', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color:var(--slightly-white-paragraph)
+}
+
+.section-emphasis {
+    grid-area: emphasis; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.section-emphasis .title {
+    color: white;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-emphasis .subtitle {
+    text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 1.2rem;
+    color: var(--slightly-white-paragraph)
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+}
+.attribution a { 
+    color: hsl(227, 16%, 54%); 
+}
