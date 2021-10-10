@@ -2,10 +2,14 @@
 
 /* font-family: 'Inter', sans-serif;
 font-family: 'Lexend Deca', sans-serif; */
+body{ 
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .bg {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-color: var(--very-dark-blue);
     display: flex;
     flex-direction: column;
@@ -14,14 +18,199 @@ font-family: 'Lexend Deca', sans-serif; */
 }
 
 .card-container {
-    width: 85%;
+    width: 90%;
+    height: 650px;
+    display: grid;
+    grid-template-areas: 
+    "image"
+    "description"
+    "emphasis";
+    grid-template-rows: 1fr 1.2fr 1fr;
+    border-radius: 10px;
+    background-color: var(--dark-desatured-blue);
+}
+
+.section-image {
+    grid-area: image; 
+    background-color: var(--soft-violet);
+    border-radius: 10px 10px 0 0;
+}
+
+.section-image .image {
+    height: 100%;
+    background-image: url(../images/image-header-mobile.jpg);
+    background-color: var(--soft-violet);
+    background-blend-mode: multiply;
+    background-size: cover;
+    opacity: 0.8;
+    border-radius: 10px 10px 0 0;
+}
+
+.section-description {
+    grid-area: description; 
+    /* background-color:tomato; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.section-description .title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.section-description .title span{
+    color: var(--soft-violet)
+}
+
+.section-description .paragraph {
+    font-family: 'inter', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color:var(--slightly-white-paragraph)
+}
+
+.section-emphasis {
+    grid-area: emphasis; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.section-emphasis .title {
+    color: white;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-emphasis .subtitle {
+    text-transform: uppercase;
+    font-family: 'Lexend Deca', sans-serif; 
+    font-size: 1.2rem;
+    color: var(--slightly-white-paragraph)
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    margin-top: 20px;
+    color: white; 
+}
+.attribution a { 
+    color: hsl(227, 16%, 54%); 
+}
+
+/* TABLET VERSION */
+
+@media (min-width:425px) {
+    .card-container {
+        width: 80%;
+        height: 450px;
+        grid-template-areas: 
+        "description description"
+        "emphasis image";
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .section-image {
+        grid-area: image; 
+        background-color: var(--soft-violet);
+        border-radius: 0 0 10px 0;
+    }
+
+    .section-image .image {
+        background-image: url(../images/image-header-desktop.jpg);
+        background-position-x: right;
+        border-radius: 0 0 10px 0;
+    }
+
+    .section-description {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+/* DESKTOP VERSION */
+
+@media (min-width:768px) {
+    .card-container {
+        width: 80%;
+        max-width: 940px;
+        height: 380px;
+        grid-template-areas: 
+        "description image"
+        "emphasis image";
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 3fr 1fr;
+    }
+
+    .section-image {
+        border-radius: 0 10px 10px 0;
+    }
+
+    .section-image .image {
+        border-radius: 0 10px 10px 0;
+    }
+
+    .section-description {
+        padding: 0 15% 0 8%;
+        align-items: center;
+    }
+    .section-description .title {
+        text-align: left;
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    .section-description .paragraph {
+        text-align: left;
+    }
+
+    .section-emphasis {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 15% 0 8%;
+    }
+}
+
+
+
+
+
+
+/* 
+.bg {
+    height: 100%;
+    width: 100%;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 7%;
+}
+
+.card-container {
+    width: 100%;
     height: 750px;
     display: grid;
     grid-template-areas: 
     "image"
     "description"
     "emphasis";
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.5fr 1fr;
     border-radius: 10px;
     background-color: var(--dark-desatured-blue);
 }
@@ -52,7 +241,7 @@ font-family: 'Lexend Deca', sans-serif; */
 
 .section-description .title {
     color: white;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     text-align: center;
@@ -75,9 +264,10 @@ font-family: 'Lexend Deca', sans-serif; */
     grid-area: emphasis; 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding-bottom: 10%;
 }
 
 .section-emphasis .title {
@@ -95,7 +285,6 @@ font-family: 'Lexend Deca', sans-serif; */
     color: var(--slightly-white-paragraph)
 }
 
-
 .attribution { 
     font-size: 11px; 
     text-align: center;
@@ -105,3 +294,61 @@ font-family: 'Lexend Deca', sans-serif; */
 .attribution a { 
     color: hsl(227, 16%, 54%); 
 }
+
+DESKTOP VERSION
+
+@media (min-width: 376px) {
+    .bg {
+        max-width: 1440px;
+        height: 100vh;
+        padding: 10% 10%;
+        margin: 0 auto;
+    }
+    
+    .card-container {
+        grid-template-areas: 
+        "description image"
+        "emphasis image";
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 1.5fr 1fr;
+        max-width: 940px;
+    }
+
+    .section-image {
+        border-radius: 0px 10px 10px 0;
+    }
+
+    .section-image .image {
+        border-radius: 0px 10px 10px 0;
+        background-image: url(../images/image-header-desktop.jpg);
+    }
+
+    .section-description {
+        padding: 5% 25% 0 10%;
+    }
+    
+    .section-description .title {  
+        font-size: 3.0rem;
+        text-align: left;
+        line-height: 4rem;
+    }
+    
+    .section-description .paragraph {
+        text-align: left;
+    }
+
+    .section-emphasis {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 0 25% 0 10%;
+    }
+    
+    .section-emphasis .title {
+        font-size: 2.5rem;
+    }
+    
+    .section-emphasis .subtitle {
+        font-size: 1.5rem;
+    }
+} */
