@@ -127,7 +127,6 @@
     }
     
     .card-container {
-        width: 80%;
         max-width: 940px;
         height: 380px;
         grid-template-areas: 
