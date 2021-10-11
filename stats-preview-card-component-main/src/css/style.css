@@ -1,24 +1,21 @@
-  .bg {
-      height: 100%;
-      width: 100%;
+.bg {
+      height: 100vh;
+      min-height: 750px;
       background-color: var(--very-dark-blue);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+      padding: 10% 5%;
   }
 
 .card-container {
-    width: 90%;
     height: 650px;
-    margin: 50px 0;
     display: grid;
     grid-template-areas:
     "image"
-    "description"
-    "emphasis";
-    grid-template-rows: 1fr 1.2fr 1fr;
+    "info";
+    grid-template-rows: 1fr 2fr;
     border-radius: 10px;
     background-color: var(--dark-desatured-blue);
 }
@@ -33,14 +30,16 @@
     height: 100%;
     background-image: url(../images/image-header-mobile.jpg);
     background-color: var(--soft-violet);
+    background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-size: cover;
+    background-position: right top;
     opacity: 0.8;
     border-radius: 10px 10px 0 0;
 }
 
-.section-description {
-    grid-area: description; 
+.section-info {
+    grid-area: info; 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -48,7 +47,7 @@
     padding: 0 8%;
 }
 
-.section-description .title {
+.section-info .title {
     color: white;
     font-size: 2.5rem;
     font-weight: bold;
@@ -57,34 +56,34 @@
     line-height: 3rem;
 }
 
-.section-description .title span{
+.section-info .title span{
     color: var(--soft-violet)
 }
 
-.section-description .paragraph {
+.section-info .paragraph {
     font-family: 'inter', sans-serif;
     line-height: 2.5rem;
     text-align: center;
     color:var(--slightly-white-paragraph)
 }
 
-.section-emphasis {
-    grid-area: emphasis; 
+.section-info .emphasis {
+    width: 100%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    text-align: center;
+    align-items: center;
 }
 
-.section-emphasis .title {
+.section-info .emphasis .title {
     color: white;
     font-family: 'inter', sans-serif;
     font-weight: bold;
     font-size: 2rem;
-    margin-bottom: 10px;
 }
 
-.section-emphasis .subtitle {
+.section-info .emphasis .subtitle {
     text-transform: uppercase;
     font-family: 'Lexend Deca', sans-serif; 
     font-size: 1.2rem;
@@ -94,7 +93,7 @@
 .attribution { 
     font-size: 1rem; 
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
     color: white; 
 }
 .attribution a { 
@@ -104,44 +103,33 @@
 /* TABLET VERSION */
 
 @media (min-width:425px) {
-    .bg {
-        height: 100vh;
-    }    
-
-    .card-container {
-        width: 80%;
-        height: 450px;
-        grid-template-areas: 
-        "description description"
-        "emphasis image";
-        grid-template-columns: 1fr 1.5fr;
-        grid-template-rows: 1fr 1fr;
-        margin: 50px 0;
+     .card-container {
+        grid-template-rows: 1fr 1.5fr;
+        height: 500px;
     }
 
-    .section-image {
-        border-radius: 0 0 10px 0;
+    .section-info .title {
+        font-size: 3rem;
     }
 
-    .section-image .image {
-        background-image: url(../images/image-header-desktop.jpg);
-        background-position-x: right;
-        border-radius: 0 0 10px 0;
+    .section-info .emphasis {
+        flex-direction: row;
+        height: 25%;
+        max-width: 400px;
     }
 }
 
 /* DESKTOP VERSION */
 
-@media (min-width:768px) {
+@media (min-width:779px) {
     .card-container {
         width: 80%;
         max-width: 940px;
         height: 380px;
         grid-template-areas: 
-        "description image"
-        "emphasis image";
+        "info image";
         grid-template-columns: 1.2fr 1fr;
-        grid-template-rows: 3fr 1fr;
+        grid-template-rows: 1fr;
     }
 
     .section-image {
@@ -152,24 +140,25 @@
         border-radius: 0 10px 10px 0;
     }
 
-    .section-description {
-        padding: 0 15% 0 8%;
+    .section-info {
+        padding: 5% 15% 5% 8%;
     }
-    .section-description .title {
+
+    .section-info .title {
         text-align: left;
         font-size: 3.2rem;
         line-height: 4rem;
     }
 
-    .section-description .paragraph {
+    .section-info .paragraph {
         text-align: left;
     }
 
-    .section-emphasis {
+    .section-info .emphasis {
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: 0 15% 0 8%;
+        align-items: center;
+        height: 20%;
     }
 }
 
