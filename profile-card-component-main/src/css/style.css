@@ -8,11 +8,12 @@ body {
     color: var(--dark-grayish-blue);
 }
 
-/* MOBILE VERSION */
+/* REPONSIVE VERSION */
 
 .bg {
     height: 100vh;
-    width: 100%;
+    min-height: 350px;
+    width: 100vw;
     background-color: var(--dark-cyan);
     padding: 20px;
     display: flex;
@@ -51,15 +52,13 @@ body {
     background-color: #fff;
     height: 350px;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     border-radius: 15px;
     z-index: 1;
-    box-shadow: 0 0 50px rgb(45, 50, 72, 0.5);
-    position: relative;
-    
+    box-shadow: 0 0 50px rgb(45, 50, 72, 0.5);    
 }
 
-.card-container .img-header {
+.card-container .header {
     background: url(../images/bg-pattern-card.svg);
     width: 100%;
     height: 36%;
@@ -81,7 +80,6 @@ body {
 }
 
 .card-container .info-section {
-    border: 1px solid tomato;
     padding-top: 45px;
     height: 64%;
     display: flex;
@@ -99,41 +97,40 @@ body {
     justify-content: center;
 }
 
-.card-container .info-section .info .name-age,
-.card-container .info-section .stats .title {
+.card-container .info-section .info .name-age {
     font-size: 1.8rem;
+    color: var(--very-dark-desaturad);margin-bottom: 15px;
+}
+
+.card-container .info-section .info .name-age strong {
     font-weight: 700;
-    color: var(--very-dark-desaturad);
 }
-
-.card-container .info-section .city {
-    margin-top: 15px;
-}
-
 
 .card-container .info-section .stats {
-    /* background-color: yellowgreen; */
-    display: flex;
     width: 100%;
     height: 50%;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     border-top: 1px solid rgba(150, 150, 150, 0.2);; 
 }
 
-.card-container .info-section .stats .item {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; */
+.card-container .info-section .stats .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--very-dark-desaturad);
+    margin-bottom: 10px;
 }
 
 .card-container .info-section .stats .description {
     font-size: 1.2rem;
-    margin-top: 10px;
 }
 
-
-
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: #fff; 
+    margin-top: 15px;
+}
+.attribution a { 
+    color: rgb(224, 224, 224);); }
